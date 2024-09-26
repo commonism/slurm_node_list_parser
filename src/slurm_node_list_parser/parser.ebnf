@@ -1,0 +1,39 @@
+@@whitespace :: //
+
+start
+    = nodes
+    ;
+
+nodes
+    = ",".{ node }+
+    ;
+
+node
+    = segments:{ segments }+
+    ;
+
+segments
+    = identifier
+    | bracketed
+    ;
+
+bracketed
+    = "[" ",".{ range_list }+ "]"
+    ;
+
+identifier
+    = /[a-zA-Z0-9-]+/
+    ;
+
+nodespec
+    = identifier
+    ;
+
+number
+    = /[0-9]+/
+    ;
+
+range_list
+    = type:`range` begin:number "-" end:number
+    | type:`item` value:identifier
+    ;

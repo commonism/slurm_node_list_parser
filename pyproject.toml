@@ -1,0 +1,20 @@
+[project]
+name = "slurm_node_list_parser"
+version = "0.1.0"
+description = "EBNF parser for SLURM node lists"
+authors = [
+    {name = "Markus Kötter", email = "koetter@cispa.de"},
+]
+dependencies = ["tatsu"]
+requires-python = ">=3.10"
+readme = "README.md"
+license = {text = "MIT"}
+
+[tool.pdm]
+distribution = false
+
+[tool.setuptools.packages.find]
+where = ["src/"]
+
+[tool.setuptools.package-data]
+"slurm_node_list_parser" = ["grammar.ebnf"]
