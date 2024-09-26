@@ -20,9 +20,8 @@ class Semantic:
         return NodeList.Node(ast.segments)
 
     def range_list(self, ast):
-        match ast.type:
-            case "range":
-                return NodeList.Segment.Range(ast.begin, ast.end)
-            case "item":
-                return NodeList.Segment.Item(ast.value)
+        if ast.type == "range":
+            return NodeList.Segment.Range(ast.begin, ast.end)
+        elif ast.type == "item":
+            return NodeList.Segment.Item(ast.value)
         raise ValueError(ast.type)
