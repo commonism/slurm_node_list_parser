@@ -8,6 +8,9 @@ def parse(data: str):
     v = parser.parse(data, semantics=Semantic())
     return v
 
+def expand(data: str, result_type=tuple):
+    v = parse(data)
+    return result_type(iter(v))
 
 class Semantic:
     def nodes(self, ast):
@@ -25,3 +28,5 @@ class Semantic:
         elif ast.type == "item":
             return NodeList.Segment.Item(ast.value)
         raise ValueError(ast.type)
+
+__all__ = ["parse","expand"]
