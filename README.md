@@ -4,6 +4,7 @@ EBNF grammar for parsing SLURM node list definitions using TatSu
 
 ## prior art
  * the [magic slurm node list parser](https://gist.github.com/ebirn/cf52876120648d7d85501fcbf185ff07)
+ * [python-hostlist](https://pypi.org/project/python-hostlist) found when thinking about renaming to "hostlist"
 
 ### example
 ```
